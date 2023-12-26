@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Voting System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        #voting-container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 400px;
+        }
+
+        .candidate {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .candidate input {
+            margin-right: 10px;
+        }
+
+        #vote-btn {
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div id="voting-container">
+        <h2>Online Voting System</h2>
+
+        <div class="candidate">
+            <input type="radio" name="candidate" value="candidate1" id="candidate1"> Candidate 1
+        </div>
+
+        <div class="candidate">
+            <input type="radio" name="candidate" value="candidate2" id="candidate2"> Candidate 2
+        </div>
+
+        <div class="candidate">
+            <input type="radio" name="candidate" value="candidate3" id="candidate3"> Candidate 3
+        </div>
+
+        <button id="vote-btn" onclick="submitVote()">Vote</button>
+    </div>
+
+    <script>
+        function submitVote() {
+            var selectedCandidate = document.querySelector('input[name="candidate"]:checked');
+
+            if (selectedCandidate) {
+                alert('Vote submitted for ' + selectedCandidate.value);
+                // You can send the vote to the server here
+            } else {
+                alert('Please select a candidate before voting.');
+            }
+        }
+    </script>
+</body>
+</html>
